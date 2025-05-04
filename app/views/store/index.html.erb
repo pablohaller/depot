@@ -17,6 +17,12 @@
               <h2 class="font-bold text-lg mb-3"><%= product.title %></h2>
               <p>
                 <%= sanitize(product.description) %>
+                <%=
+                    button_to 'Add to cart',
+                    line_items_path(:include product),
+                    form_class: 'inline',
+                    class: 'ml-4 rounded-lg py-1 px-2 text-white bg-green-600'
+                %>
               </p>
               <div class="mt-3">
                 <%= number_to_currency(product.price) %>
