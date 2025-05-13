@@ -22,12 +22,12 @@ class LineItemsControllerTest < ActionDispatch::IntegrationTest
 
     follow_redirect!
 
-    assert_select "h2", "Your Pragmatic Cart"
-    assert_select "li", "1 \u00D7 Programming Ruby 1.9"
+    assert_select "h2", "Your Cart"
+    assert_select "td", "Programming Ruby 1.9"
   end
 
   test "should show line_item" do
-    patch line_item_url(@line_item), 
+    patch line_item_url(@line_item),
       params: { line_item: { product_id: @line_item.product_id } }
     assert_redirected_to line_item_url(@line_item)
   end
