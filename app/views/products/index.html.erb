@@ -1,3 +1,5 @@
+<%= turbo_stream_from "products" %>
+<%= turbo_refreshes_with method: :morph, scroll: :preserve %>
 <% content_for :title, "Products" %>
 <div class="w-full">
   <% if notice.present? %>
