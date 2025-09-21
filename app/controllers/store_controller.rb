@@ -1,4 +1,5 @@
 class StoreController < ApplicationController
+  allow_unauthenticated_access
   include CurrentCart
   before_action :set_cart
 
