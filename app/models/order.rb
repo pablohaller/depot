@@ -27,13 +27,13 @@ class Order < ApplicationRecord
       payment_method = :check
       payment_details[:routing] = pay_type_params[:routing_number]
       payment_details[:account] = pay_type_params[:account_number]
-    when "Credit card"
+    when "Credit Card"
       payment_method = :credit_card
       month, year = pay_type_params[:expiration_date].split(//)
       payment_details[:cc_num] = pay_type_params[:credit_card_number]
       payment_details[:expiration_month] = month
       payment_details[:expiration_year] = year
-    when "Purchase order"
+    when "Purchase Order"
       payment_method = :po
       payment_details[:po_num] = pay_type_params[:po_number]
     end
