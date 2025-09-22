@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resource :session
   resources :passwords, param: :token
   resources :products
+  resources :support_requests, only: %i[ index update ]
 
   scope "(:locale)" do
     resources :orders
